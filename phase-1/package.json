@@ -1,0 +1,9 @@
+{
+  "name": "CSE5335Phase1",
+  "version": "1.0.0",
+  "description": "CSE5335 Phase1 Angular-Node App",
+  "author": "jyoti.salitra",
+  "dependencies": {
+    "express": "^4.12.0"
+  }
+}

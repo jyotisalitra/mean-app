@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>CSE5335 Project | Phase 1</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body ng-controller="HomeCtrl as hc">
+<section class="banner">
+    <div class="container">
+        <h1>CSE5335 Project | Phase 1</h1>
+        <h4>An Angular-Node App</h4>
+
+        <button class="btn btn-primary" ng-click="hc.loadData()">Load Data</button>
+    </div>
+</section>
+
+<section class="result" ng-show="hc.restaurants.length > 0">
+    <div class="container">
+        <h4>List of Restaurants</h4>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Phone</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="r in hc.restaurants">
+                <td>{{r.Title}}</td>
+                <td>{{r.Address}}</td>
+                <td>{{r.City}}</td>
+                <td>{{r.Phone}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<hr>
+<section class="result">
+    <div class="container">
+
+        <h4>Map View</h4>
+
+        <div id="map-canvas"></div>
+    </div>
+</section>
+<hr>
+<section class="result">
+    <div class="container">
+        <h4>Rating &amp; Reviews</h4>
+        <div id="donutchart" style="width: 900px; height: 500px;"></div>
+    </div>
+</section>
+<script type="text/javascript" src="//www.google.com/jsapi"></script>
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script type="application/javascript" src="scripts/app.js"></script>
+</body>
+</html>
